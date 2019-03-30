@@ -31,5 +31,35 @@ namespace MonsterSlayer
                 Console.WriteLine($"Hero can't afford the Weapon: {newWeapon.Name}");
             }
         }
+
+        public void clearAllBrokenWeapons()
+        {
+            List<Weapon> okWeapons = new List<Weapon>();
+
+            foreach (Weapon nowWeapon in weapons)
+            {
+                if (!nowWeapon.isBroken())
+                {
+                    okWeapons.Add(nowWeapon);
+                }
+            }
+
+            weapons = okWeapons;
+        }
+
+        public void clearAllOpWeapons(int ToHighDamage, int ToHighDurabilty)
+        {
+            List<Weapon> okWeapons = new List<Weapon>();
+
+            foreach (Weapon nowWeapon in weapons)
+            {
+                if (nowWeapon.Damage < ToHighDamage && nowWeapon.Durabitly < ToHighDurabilty)
+                {
+                    okWeapons.Add(nowWeapon);
+                }
+            }
+
+            weapons = okWeapons;
+        }
     }
 }
