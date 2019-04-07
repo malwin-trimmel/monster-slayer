@@ -1,4 +1,6 @@
-﻿namespace MonsterSlayer
+﻿using System;
+
+namespace MonsterSlayer
 {
     public class Weapon
     {
@@ -21,7 +23,14 @@
 
         public void reduceDurabiltly(int reduktion)
         {
-            durabilty = durabilty - reduktion;
+            if (reduktion > 0)
+            {
+                durabilty = durabilty - reduktion;
+            }
+            else
+            {
+                Console.WriteLine("Can't reduce negative durabiltly");
+            }
         }
 
         public bool isBroken()
