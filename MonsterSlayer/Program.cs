@@ -10,8 +10,6 @@ namespace MonsterSlayer
     {
         static void Main(string[] args)
         {
-            
-
             Console.WriteLine("Hallo User! How many coins should your Hero start with?");
             string howMuchGold = Console.ReadLine();
             int heroGold = Convert.ToInt32(howMuchGold);
